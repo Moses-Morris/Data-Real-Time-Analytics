@@ -28,9 +28,12 @@ top_earners.show(n=10, truncate=False)
 
 
 # Save the top earners to a CSV file
-top_earners.write.mode("overwrite").csv("output/top_earners.csv", header=True)
-top_earners.write.csv("output/room_summary.csv", header=True, mode="overwrite")
+#top_earners.write.mode("overwrite").csv("output/top_earners.csv", header=True)
+#top_earners.write.csv("output/room_summary.csv", header=True, mode="overwrite")
 
+#df.write.mode("overwrite").option("header", True).csv("output/output_csv")
+#df.coalesce(1).write.mode("overwrite").option("header", True).csv("output_csv")
+df.coalesce(1).write.mode("overwrite").option("header", True).csv("output/temp_room_summary")
 
 #stop the spark session
 spark.stop()
